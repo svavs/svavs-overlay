@@ -38,7 +38,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~
 # media-libs/netpbm is providing `pnmtopng` required by `make htmldoc`
 RDEPEND="
 	>=dev-lang/perl-5.10
-	media-gfx/imagemagick
+	media-gfx/imagemagick[perl]
 	media-libs/netpbm
 	app-text/docbook-xsl-stylesheets
 	latex? ( app-text/texlive-core app-text/poppler )
