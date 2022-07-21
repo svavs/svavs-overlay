@@ -1,0 +1,12 @@
+BDEPEND=>=virtual/rust-1.39.0 dbus-notifications? ( sys-apps/dbus )
+DEFINED_PHASES=compile install
+DESCRIPTION=terminal mail client
+EAPI=8
+HOMEPAGE=https://meli.delivery
+IUSE=+dbus-notifications +regexp +smtp +sqlite3 notmuch jmap svgscreenshot
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RESTRICT=network-sandbox
+SLOT=0
+SRC_URI=https://git.meli.delivery/meli/meli/archive/alpha-0.6.2.tar.gz
+_md5_=5286fdef6e749d4c5a64b7159691c63b

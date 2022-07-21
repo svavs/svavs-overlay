@@ -1,0 +1,63 @@
+diff --git a/Makefile b/Makefile
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,5 @@
+ PREFIX=/usr
+-DOCBOOKCSS=/usr/share/xml/docbook/xsl-stylesheets-1.76.1/html/docbook.xsl
++DOCBOOKCSS=/usr/share/sgml/docbook/xsl-stylesheets/html/docbook.xsl
+ DOCSRC=doc/code_doc_tags.mkdoc doc/config_options.mkdoc			\
+ doc/doc_format.mkdoc doc/fdl-1.3.mkdoc doc/general_usage.mkdoc		\
+ doc/intro.mkdoc doc/misc_doc_tags.mkdoc doc/output_formats.mkdoc	\
+@@ -26,42 +26,42 @@
+       doc/man3/doc.3 doc/rtf/doc.rtf doc/tracwiki/doc.txt
+ 
+ doc/html/index.html: $(DOCSRC) src/mkdocDrvHTML.pm
+-	mkdoc --doc-format html $(MKDOCFLAGS) $(MKDOCSRC)
++	src/mkdoc --doc-format html $(MKDOCFLAGS) $(MKDOCSRC)
+ 
+ doc/docbook/doc.docbook: $(DOCSRC) src/mkdocDrvDocbook5.pm
+-	mkdoc --doc-format docbook $(MKDOCFLAGS) $(MKDOCSRC)
++	src/mkdoc --doc-format docbook $(MKDOCFLAGS) $(MKDOCSRC)
+ 
+ doc/docbook/index.html: doc/docbook/doc.docbook
+ 	xsltproc $(DOCBOOKCSS) doc/docbook/doc.docbook > $@
+ 
+ doc/latex/doc.tex: $(DOCSRC) src/mkdocDrvLatex.pm
+-	mkdoc --doc-format latex $(MKDOCFLAGS) $(MKDOCSRC)
++	src/mkdoc --doc-format latex $(MKDOCFLAGS) $(MKDOCSRC)
+ 
+ doc/latex/doc.pdf: doc/latex/doc.tex
+ 	( cd doc/latex ; pdflatex doc.tex )
+ 	( cd doc/latex ; test -f tag.idx && makeindex tag.idx && pdflatex doc.tex )
+ 
+ doc/texinfo/doc.texi: $(DOCSRC) src/mkdocDrvTexinfo.pm
+-	mkdoc --doc-format texinfo $(MKDOCFLAGS) $(MKDOCSRC)
++	src/mkdoc --doc-format texinfo $(MKDOCFLAGS) $(MKDOCSRC)
+ 
+ doc/texinfo/doc.info: doc/texinfo/doc.texi
+ 	( cd doc/texinfo ; makeinfo -o doc.info doc.texi )
+ 
+ doc/rst/doc.rst: $(DOCSRC) src/mkdocDrvRst.pm
+-	mkdoc --doc-format rst $(MKDOCFLAGS) $(MKDOCSRC)
++	src/mkdoc --doc-format rst $(MKDOCFLAGS) $(MKDOCSRC)
+ 
+ doc/rst/doc.html: doc/rst/doc.rst
+-	rst2html $< > $@
++	rst2html.py $< > $@
+ 
+ doc/text/doc.txt: $(DOCSRC) src/mkdocDrvText.pm
+-	mkdoc --doc-format text $(MKDOCFLAGS) $(MKDOCSRC) --single-output-file 1
++	src/mkdoc --doc-format text $(MKDOCFLAGS) $(MKDOCSRC) --single-output-file 1
+ 
+ doc/man3/doc.3: $(DOCSRC) src/mkdocDrvMan.pm
+-	mkdoc --doc-format man $(MKDOCFLAGS) $(MKDOCSRC) --single-output-file 1
++	src/mkdoc --doc-format man $(MKDOCFLAGS) $(MKDOCSRC) --single-output-file 1
+ 
+ doc/rtf/doc.rtf: $(DOCSRC) src/mkdocDrvRtf.pm
+-	mkdoc --doc-format rtf $(MKDOCFLAGS) $(MKDOCSRC)
++	src/mkdoc --doc-format rtf $(MKDOCFLAGS) $(MKDOCSRC)
+ 
+ doc/tracwiki/doc.txt: $(DOCSRC) src/mkdocDrvTracWiki.pm
+-	mkdoc --doc-format tracwiki $(MKDOCFLAGS) $(MKDOCSRC)
++	src/mkdoc --doc-format tracwiki $(MKDOCFLAGS) $(MKDOCSRC)
+ 

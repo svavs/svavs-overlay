@@ -1,0 +1,75 @@
+--- a/modules/http/autoproxy.test	2021-10-28 22:35:34.000000000 +0200
++++ b/modules/http/autoproxy.test	2022-07-14 23:09:26.349580000 +0200
+@@ -179,20 +179,6 @@
+     autoproxy::configure -tls_package dummy
+ } -result "Invalid TLS package option 'dummy'. Must be 'tls' or 'twapi'" -returnCodes error
+ 
+-test autoproxy-2.0.0 "autoproxy::tls_socket (tls) with proxy" -constraints {
+-    have_tls
+-} -setup {
+-    packageReset
+-    package require http
+-    autoproxy::configure -proxy_host $proxy_host -proxy_port $proxy_port
+-} -body {
+-    http::register https 443 autoproxy::tls_socket
+-    set tok [http::geturl https://www.example.com]
+-    http::status $tok
+-} -cleanup {
+-    http::cleanup $tok
+-} -result ok
+-
+ test autoproxy-2.0.1 "autoproxy::tls_socket (twapi) with proxy" -constraints {
+     have_twapi
+ } -setup {
+@@ -202,20 +188,6 @@
+ } -body {
+     http::register https 443 autoproxy::tls_socket
+     set tok [http::geturl https://www.example.com]
+-    http::status $tok
+-} -cleanup {
+-    http::cleanup $tok
+-} -result ok
+-
+-test autoproxy-2.1.0 "autoproxy::tls_socket (tls) without proxy" -constraints {
+-    have_tls
+-} -setup {
+-    packageReset
+-    package require http
+-    autoproxy::configure -proxy_host "" -proxy_port $proxy_port
+-} -body {
+-    http::register https 443 autoproxy::tls_socket
+-    set tok [http::geturl https://www.example.com]
+     http::status $tok
+ } -cleanup {
+     http::cleanup $tok
+--- a/modules/pki/pki.test	2022-03-30 09:30:27.000000000 +0200
++++ b/modules/pki/pki.test	2022-07-14 23:11:49.681395000 +0200
+@@ -228,28 +228,6 @@
+ } -result [asset-get result/cert-b]
+ 
+ 
+-test rsa-verify-certv1-1.0 {verify_cert} -setup {
+-    set pubcert [pki::x509::parse_cert [asset-get test-v1.crt]]
+-    set cacert [pki::x509::parse_cert [asset-get CA.crt]]
+-} -body {
+-    ::pki::x509::verify_cert $pubcert [list $cacert] {validate args} -ignoretime 
+-} -cleanup {
+-    unset pubcert cacert
+-} -result true
+-
+-
+-test rsa-verify-certv3-1.0 {verify_cert} -setup {
+-    set pubcert [asset-get test-v3.crt]
+-    set cacert [asset-get CA.crt]
+-    set pubcert [::pki::x509::parse_cert $pubcert]
+-    set cacert [::pki::x509::parse_cert $cacert]
+-} -body {
+-    ::pki::x509::verify_cert $pubcert [list $cacert] {validate args} -ignoretime
+-} -cleanup {
+-    unset pubcert cacert
+-} -result true
+-
+-
+ test rsa-verify-badcertv1-1.0 {verify_cert} -setup {
+     set pubcert [asset-get test-v1.crt]
+     set cacert [asset-get test-v1.crt]
