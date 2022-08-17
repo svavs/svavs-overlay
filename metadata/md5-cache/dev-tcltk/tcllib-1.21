@@ -6,11 +6,11 @@ EAPI=7
 HOMEPAGE=http://www.tcl.tk/software/tcllib/
 INHERIT=virtualx
 IUSE=examples test
-KEYWORDS=~alpha amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ppc ppc64 ~s390 sparc x86 ~amd64-linux ~x86-linux
+KEYWORDS=~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86 ~amd64-linux ~x86-linux
 LICENSE=BSD
 RDEPEND=dev-lang/tcl:0= dev-tcltk/tdom
 RESTRICT=!test? ( test )
 SLOT=0
 SRC_URI=mirror://sourceforge/tcllib/tcllib/1.21/tcllib-1.21.tar.xz
-_eclasses_=virtualx	975d49ff3b3f451efe7a95f230532135
-_md5_=1a081954d32574d980a90203e324db97
+_eclasses_=virtualx	644887c82aefdf12001489391fca4f02
+_md5_=a6b295a383165d589d56d4c50aea1c7a
