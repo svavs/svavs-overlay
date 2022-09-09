@@ -5,7 +5,7 @@ EAPI="7"
 GNOME2_LA_PUNT="yes" # plugins are dlopened
 PYTHON_COMPAT=( python3_{8..10} )
 
-inherit eutils gnome2 meson multilib python-single-r1
+inherit eutils gnome2 multilib python-single-r1
 
 DESCRIPTION="X-Apps generic [Media] player"
 HOMEPAGE="https://github.com/linuxmint/xplayer"
@@ -31,7 +31,6 @@ COMMON_DEPEND="
 	>=x11-libs/xapp-1.9.0
 	>=x11-libs/gdk-pixbuf-2.42.8
 
-
 	gnome-base/gsettings-desktop-schemas
 	gnome-base/gvfs
 
@@ -55,6 +54,8 @@ DEPEND="${COMMON_DEPEND}
 	media-libs/gst-plugins-base[introspection]
 "
 
+DOCS="AUTHORS COPYING ChangeLog INSTALL MAINTAINERS NEWS README TODO debian/changelog"
+
 # yelp-tools, gnome-common needed to eautoreconf
 
 pkg_setup() {
@@ -62,27 +63,10 @@ pkg_setup() {
 }
 
 src_prepare() {
+	default
 	gnome2_src_prepare
 }
 
-src_configure() {
-	DOCS="AUTHORS COPYING ChangeLog INSTALL MAINTAINERS NEWS README TODO debian/changelog"
-
-	local emesonargs=(
-		$(meson_use doc docs)
-	)
-
-	meson_src_configure
-}
-
-src_compile() {
-	meson_src_compile
-}
-
-##src_test() {
-##	meson_src_test
-##}
-
 src_install() {
-	meson_src_install
+	default
 }
