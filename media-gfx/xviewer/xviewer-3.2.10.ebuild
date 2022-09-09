@@ -73,7 +73,6 @@ src_configure() {
 	local emesonargs=(
 		-Denable_gvfs_metadata=true
 		$(meson_use doc docs)
-		$(meson_use spell enable_spell)
 	)
 
 	meson_src_configure
