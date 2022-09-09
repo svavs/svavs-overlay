@@ -71,7 +71,6 @@ src_configure() {
 	DOCS="AUTHORS COPYING MAINTAINERS README.md THANKS debian/changelog"
 
 	local emesonargs=(
-		-Denable_gvfs_metadata=true
 		$(meson_use doc docs)
 	)
 
