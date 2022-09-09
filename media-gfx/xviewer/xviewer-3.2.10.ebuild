@@ -35,6 +35,10 @@ COMMON_DEPEND="
 	gnome-base/gsettings-desktop-schemas
 	gnome-base/gvfs
 
+	>=dev-libs/libpeas-1.14.1[gtk]
+	x11-libs/libX11
+	net-libs/libsoup:2.4
+
 	python? (
 		${PYTHON_DEPS}
 		$(python_gen_cond_dep '
@@ -51,10 +55,8 @@ RDEPEND="${COMMON_DEPEND}
 
 DEPEND="${COMMON_DEPEND}
 	dev-libs/libxml2:2
-	media-libs/exempi
-	media-libs/libexif
-	media-libs/lcms
-	gnome-base/librsvg
+	app-text/yelp-tools
+	virtual/pkgconfig
 "
 
 # yelp-tools, gnome-common needed to eautoreconf
