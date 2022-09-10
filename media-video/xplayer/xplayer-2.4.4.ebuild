@@ -4,8 +4,10 @@
 EAPI="7"
 GNOME2_LA_PUNT="yes" # plugins are dlopened
 PYTHON_COMPAT=( python3_{8..10} )
+WANT_AUTOCONF=2.5
+WANT_AUTOMAKE=1.9
 
-inherit eutils gnome2 multilib python-single-r1
+inherit autotools eutils gnome2 multilib python-single-r1
 
 DESCRIPTION="X-Apps generic [Media] player"
 HOMEPAGE="https://github.com/linuxmint/xplayer"
@@ -49,9 +51,17 @@ RDEPEND="${COMMON_DEPEND}
 "
 
 DEPEND="${COMMON_DEPEND}
+	media-libs/clutter
 	media-libs/clutter-gst
+	media-libs/clutter-gtk
 	media-libs/gstreamer[introspection]
 	media-libs/gst-plugins-base[introspection]
+	app-text/docbook-xml-dtd:4.1.2
+	app-text/yelp-tools
+	dev-libs/libxml2:2
+	>=dev-util/gtk-doc-am-1
+	>=dev-util/intltool-0.50.1
+	virtual/pkgconfig
 "
 
 DOCS="AUTHORS COPYING ChangeLog INSTALL MAINTAINERS NEWS README TODO debian/changelog"
@@ -64,6 +74,7 @@ pkg_setup() {
 
 src_prepare() {
 	default
+	eautoreconf
 	gnome2_src_prepare
 }
 
