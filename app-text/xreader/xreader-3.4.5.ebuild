@@ -86,7 +86,7 @@ src_prepare() {
 }
 
 src_configure() {
-	DOCS="AUTHORS COPYING ChangeLog NEWS README.md debian/changelog"
+	DOCS="AUTHORS COPYING ChangeLog NEWS debian/changelog"
 
 	local emesonargs=(
 		$(meson_use doc docs)
