@@ -69,8 +69,10 @@ RDEPEND="${COMMON_DEPEND}
 DEPEND="${COMMON_DEPEND}
 	app-text/yelp-tools
 	dev-libs/libxml2:2
+	>=dev-util/intltool-0.50.1
 	>=dev-util/gtk-doc-am-1
 	virtual/pkgconfig
+	dev-libs/mathjax
 "
 
 # yelp-tools, gnome-common needed to eautoreconf
