@@ -31,6 +31,9 @@ COMMON_DEPEND="
 	>=x11-libs/xapp-1.9.0
 	>=x11-libs/gdk-pixbuf-2.42.8
 
+	media-plugins/gst-plugins-gdkpixbuf
+	dev-libs/totem-pl-parser
+
 	gnome-base/gsettings-desktop-schemas
 	gnome-base/gvfs
 
