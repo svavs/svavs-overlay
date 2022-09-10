@@ -4,8 +4,6 @@
 EAPI="7"
 GNOME2_LA_PUNT="yes" # plugins are dlopened
 PYTHON_COMPAT=( python3_{8..10} )
-WANT_AUTOCONF=2.5
-WANT_AUTOMAKE=1.9
 
 inherit autotools eutils gnome2 multilib python-single-r1
 
