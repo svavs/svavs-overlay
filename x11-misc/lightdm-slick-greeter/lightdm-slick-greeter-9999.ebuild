@@ -53,10 +53,10 @@ pkg_preinst(){
 
 pkg_postinst(){
 	gnome2_schemas_update
-	einfo "To enable the slick-greeter support, set the greeter-session option"
-	einfo "to 'slick-greeter' in your lightdm.conf in order to get this:"
-	einfo "greeter-session=slick-greeter"
-	einfo "then, restart your session and the lightdm/xdm daemon."
+	elog "To enable the slick-greeter support, set the greeter-session option"
+	elog "to 'slick-greeter' in your lightdm.conf in order to get this:"
+	elog "greeter-session=slick-greeter"
+	elog "then, restart your session and the lightdm/xdm daemon."
 }
 
 pkg_postrm(){
