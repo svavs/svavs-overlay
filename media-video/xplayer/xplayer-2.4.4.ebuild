@@ -1,5 +1,8 @@
 # Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
+#
+#
+# TODO: let the package configure correctly adding the missing dependencies
 
 EAPI="7"
 GNOME2_LA_PUNT="yes" # plugins are dlopened
