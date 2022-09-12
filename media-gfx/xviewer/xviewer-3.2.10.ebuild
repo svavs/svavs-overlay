@@ -56,6 +56,7 @@ RDEPEND="${COMMON_DEPEND}
 DEPEND="${COMMON_DEPEND}
 	dev-libs/libxml2:2
 	app-text/yelp-tools
+	>=dev-util/intltool-0.50.1
 	virtual/pkgconfig
 "
 
