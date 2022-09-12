@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python3_{8..10} )
 
 inherit autotools eutils gnome2 multilib python-single-r1
 
-DESCRIPTION="X-Apps [Image] Viewer which uses the gdk-pixbuf library. It can deal with large images, and zoom and scroll with constant memory usage. Its goals are simplicity and standards compliance"
+DESCRIPTION="X-Apps [Image] Pix is an application to organize yout photos, based on gThumb"
 HOMEPAGE="https://github.com/linuxmint/pix"
 SRC_URI="https://github.com/linuxmint/pix/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
