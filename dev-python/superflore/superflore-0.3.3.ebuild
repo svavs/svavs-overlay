@@ -4,11 +4,20 @@
 EAPI=6
 PYTHON_COMPAT=( python3_{8,9,10} pypy )
 
-inherit git-r3 distutils-r1
+SCM=""
+if [ "${PV#9999}" != "${PV}" ] ; then
+	SCM="git-r3"
+  # EGIT_REPO_URI="https://github.com/ros-infrastructure/${PN}.git"
+  EGIT_REPO_URI="https://github.com/svavs/${PN}.git"
+fi
 
-EGIT_REPO_URI="https://github.com/ros-infrastructure/${PN}.git"
-# EGIT_REPO_URI="https://github.com/svavs/superflore.git"
-SRC_URI=""
+inherit ${SCM} distutils-r1
+
+if [ "${PV#9999}" != "${PV}" ] ; then
+	SRC_URI=""
+else
+  SRC_URI="https://github.com/svavs/superflore/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+fi
 
 DESCRIPTION="Super Bloom - an extended release manager for ROS"
 HOMEPAGE="https://pypi.python.org/pypi/superflore/"
