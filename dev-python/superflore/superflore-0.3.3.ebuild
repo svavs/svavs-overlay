@@ -21,7 +21,7 @@ IUSE="test"
 RDEPEND="dev-python/xmltodict
 	dev-python/termcolor
 	dev-python/setuptools
-	dev-python/rosinstall_generator
+	dev-util/rosinstall_generator
 	dev-python/rosdistro
 	dev-python/catkin_pkg
 	dev-python/rosdep
