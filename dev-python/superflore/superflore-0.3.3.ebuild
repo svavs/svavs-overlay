@@ -21,15 +21,15 @@ IUSE="test"
 RDEPEND="dev-python/xmltodict
 	dev-python/termcolor
 	dev-python/setuptools
-	dev-util/rosinstall_generator
 	dev-python/rosdistro
 	dev-python/catkin_pkg
-	dev-python/rosdep
 	dev-python/git-python
 	dev-python/PyGithub
 	dev-python/pyyaml
 	dev-python/docker-py
 	dev-python/requests
+	dev-util/rosinstall_generator
+	dev-util/rosdep
 	dev-vcs/git
 	dev-lang/python
 	app-emulation/docker"
