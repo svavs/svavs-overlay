@@ -6,9 +6,8 @@ PYTHON_COMPAT=( python3_{8,9,10} pypy )
 
 inherit git-r3 distutils-r1
 
-# EGIT_REPO_URI="https://github.com/ros-infrastructure/${PN}.git"
-EGIT_REPO_URI="https://github.com/svavs/superflore.git"
-EGIT_BRANCH="noetic"
+EGIT_REPO_URI="https://github.com/ros-infrastructure/${PN}.git"
+# EGIT_REPO_URI="https://github.com/svavs/superflore.git"
 SRC_URI=""
 
 DESCRIPTION="Super Bloom - an extended release manager for ROS"
