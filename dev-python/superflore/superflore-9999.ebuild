@@ -31,7 +31,8 @@ RDEPEND="dev-python/xmltodict
 	dev-util/rosdep
 	dev-vcs/git
 	dev-lang/python
-	app-emulation/docker"
+	app-containers/docker
+	app-containers/docker-cli"
 
 DEPEND="${RDEPEND}
 	test? (
