@@ -9,6 +9,7 @@ if [ "${PV#9999}" != "${PV}" ] ; then
 	SCM="git-r3"
   # EGIT_REPO_URI="https://github.com/ros-infrastructure/${PN}.git"
   EGIT_REPO_URI="https://github.com/svavs/${PN}.git"
+	EGIT_BRANCH="develop"
 fi
 
 inherit ${SCM} distutils-r1
