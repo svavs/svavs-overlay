@@ -7,7 +7,6 @@ inherit cargo git-r3
 DESCRIPTION="No Nonsense Neovim Client in Rust"
 HOMEPAGE="https://github.com/neovide/neovide"
 EGIT_REPO_URI="https://github.com/neovide/neovide"
-EGIT_COMMIT="0.10.1"
 RESTRICT="mirror"
 
 LICENSE="MIT"
