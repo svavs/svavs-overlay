@@ -312,7 +312,7 @@ DESCRIPTION="Neovide: No Nonsense Neovim Gui"
 # Double check the homepage as the cargo_metadata crate
 # does not provide this value so instead repository is used
 HOMEPAGE="https://github.com/neovide/neovide https://neovide.dev/"
-SRC_URI="$(cargo_crate_uris) https://github.com/neovide/neovide/releases/download/${PV}/${PN}.tar.gz -> ${P}.tar.gz"
+SRC_URI="$(cargo_crate_uris) https://github.com/neovide/neovide/releases/download/${PV}/${PN}.tar.gz"
 
 # License set may be more restrictive as OR is not respected
 # use cargo-license for a more accurate license picture
