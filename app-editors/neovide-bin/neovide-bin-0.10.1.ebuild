@@ -35,13 +35,6 @@ src_install() {
     domenu "${FILESDIR}/assets/neovide.desktop"
     doicon "${FILESDIR}/assets/neovide.svg"
     dosym "/opt/${P}/neovide" "/usr/bin/neovide"
-
-    # dosym "/opt/${P}/assets/neovide.desktop" "/usr/share/applications/neovide.desktop"
-    # dosym "/opt/${P}/assets/neovide.svg" "/usr/share/pixmaps/neovide.svg"
-    # dosym "/opt/${P}/assets/neovide-16x16.png" "/usr/share/pixmaps/neovide-16x16.png"
-    # dosym "/opt/${P}/assets/neovide-32x32.png" "/usr/share/pixmaps/neovide-32x32.png"
-    # dosym "/opt/${P}/assets/neovide-48x48.png" "/usr/share/pixmaps/neovide-48x48.png"
-    # dosym "/opt/${P}/assets/neovide-256x256.png" "/usr/share/pixmaps/neovide-256x256.png"
 }
 
 pkg_postinst() {
