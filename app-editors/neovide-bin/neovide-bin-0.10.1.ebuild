@@ -22,7 +22,7 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-# S="${WORKDIR}/neovide"
+S="${WORKDIR}/."
 
 QA_PREBUILT="*"
 
