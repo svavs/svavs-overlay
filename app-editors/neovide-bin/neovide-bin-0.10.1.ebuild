@@ -33,7 +33,7 @@ src_install() {
     doins -r "${FILESDIR}/assets"
     doexe "neovide"
     domenu "${FILESDIR}/assets/neovide.desktop"
-    doicon "/opt/${P}/assets/neovide.svg"
+    doicon "${FILESDIR}/assets/neovide.svg"
     dosym "/opt/${P}/neovide" "/usr/bin/neovide"
 
     # dosym "/opt/${P}/assets/neovide.desktop" "/usr/share/applications/neovide.desktop"
