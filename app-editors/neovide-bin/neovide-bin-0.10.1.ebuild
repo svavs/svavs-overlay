@@ -30,7 +30,7 @@ QA_PREBUILT="*"
 src_install() {
     insinto "/opt/${P}"
     exeinto "/opt/${P}"
-    doins -r "assets"
+    doins -r "${FILESDIR}/assets"
     doexe "neovide"
     domenu "/opt/${P}/assets/neovide.desktop"
     doicon "/opt/${P}/assets/neovide.svg"
