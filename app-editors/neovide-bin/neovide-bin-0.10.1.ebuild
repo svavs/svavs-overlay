@@ -6,7 +6,7 @@ inherit xdg
 
 DESCRIPTION="No Nonsense Neovim Client in Rust"
 HOMEPAGE="https://github.com/neovide/neovide https://neovide.dev"
-SRC_URI="https://github.com/neovide/neovide/releases/download/${PV}/neovide.tar.gz -> ${PN}.tar.gz"
+SRC_URI="https://github.com/neovide/neovide/releases/download/${PV}/neovide.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -22,7 +22,7 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${PN}"
+S="${WORKDIR}/neovide"
 
 QA_PREBUILT="*"
 
