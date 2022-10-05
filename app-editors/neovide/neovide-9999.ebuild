@@ -1,6 +1,8 @@
 # Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
+# FIX: Not compiling cause of cargo's package compile error of skia-bindings
+
 EAPI=8
 inherit cargo git-r3
 
