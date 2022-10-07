@@ -16,7 +16,7 @@ RESTRICT="mirror"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="-* amd64"
+KEYWORDS="-* ~amd64"
 
 # Run-time dependencies. Must be defined to whatever this depends on to run.
 RDEPEND=">=dev-dotnet/dotnet-sdk-bin-6.0.400"
@@ -24,11 +24,11 @@ RDEPEND=">=dev-dotnet/dotnet-sdk-bin-6.0.400"
 # Build-time dependencies that need to be binary compatible with the system
 # being built (CHOST). These include libraries that we link against.
 # The below is valid if the same run-time depends are required to compile.
-DEPEND="${RDEPEND}"
+# DEPEND="${RDEPEND}"
 
 # Build-time dependencies that are executed during the emerge process, and
 # only need to be present in the native build system (CBUILD). Example:
-BDEPEND="${DEPEND}"
+# BDEPEND="${DEPEND}"
 
 
 src_unpack() {
