@@ -4,7 +4,7 @@
 
 EAPI=7
 
-# inherit dotnet
+inherit unpacker xdg-utils
 
 DESCRIPTION="Cross platform Neovim front-end UI, built with F# and Avalonia"
 HOMEPAGE="https://github.com/yatli/fvim"
@@ -37,8 +37,6 @@ src_unpack() {
 
 src_install() {
 	cp -a * "${ED}/"
-	mkdir -p "${ED}/usr/bin"
-	ln -sr ../../usr/fvim "${ED}/usr/bin/fvim"
 }
 
 pkg_postrm() {
