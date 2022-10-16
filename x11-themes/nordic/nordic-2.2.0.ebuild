@@ -23,6 +23,6 @@ src_install() {
 	doins -r ./{index.theme,gtk-2.0,gtk-3.0,kde}
 	use xfce && doins ./xfwm4
 	use mate && doins ./metacity-1
-	use gnome-shell && doins ./gnome-shell
-	use cinnamon && doins ./cinnamon
+	use gnome-shell && doins -r ./gnome-shell
+	use cinnamon && doins -r ./cinnamon
 }
