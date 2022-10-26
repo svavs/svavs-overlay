@@ -4,7 +4,7 @@
 
 EAPI=7
 
-inherit cmake desktop pax-utils
+inherit cmake desktop #pax-utils
 
 DESCRIPTION="A dynamic Linux tiling window manager for Xorg"
 HOMEPAGE="https://github.com/hyprwm/Hypr"
@@ -68,12 +68,16 @@ src_compile() {
 }
 
 src_install() {
-  # dobin ${WORKDIR}/${PF}_build/Hypr
+  dobin ${WORKDIR}/${PF}_build/Hypr
 
-	pax-mark m "${ED}"/usr/bin/Hypr
+	# pax-mark m "${ED}"/usr/bin/Hypr
 
 	exeinto /etc/X11/Sessions
 	newexe "${FILESDIR}"/${PN}-session ${PN}
+
+  # X Session
+  insinto /usr/share/xsessions
+  doins "${S}"/example/${PN}.desktop
 
 	# GNOME-based 
 	if use gnome; then
@@ -85,8 +89,7 @@ src_install() {
 		domenu "${S}"/example/${PN}.desktop
 
 		# X Session
-		insinto /usr/share/xsessions
-		doins "${S}"/example/${PN}.desktop
+		# insinto /usr/share/xsessions
+		# doins "${S}"/example/${PN}.desktop
 	fi
-
 }
