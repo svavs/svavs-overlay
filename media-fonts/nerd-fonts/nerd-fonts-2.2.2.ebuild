@@ -65,7 +65,7 @@ FONTS=(
 )
 
 SRC_URI="
-	3270?					( "${COMMON_URI}/3270.zip" )
+	3270?				          	( "${COMMON_URI}/3270.zip" )
 	agave?                  ( "${COMMON_URI}/Agave.zip" )
 	anonymouspro?           ( "${COMMON_URI}/AnonymousPro.zip" )
 	arimo?                  ( "${COMMON_URI}/Arimo.zip" )
