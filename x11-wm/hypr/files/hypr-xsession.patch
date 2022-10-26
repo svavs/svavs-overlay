@@ -1,0 +1,17 @@
+diff --git a/example/hypr.desktop b/example/hypr.desktop
+index 9cacfea..e056dd7 100644
+--- a/example/hypr.desktop
++++ b/example/hypr.desktop
+@@ -1,9 +1,9 @@
+ [Desktop Entry]
+ Name=Hypr
+ Comment=A tiling window manager written in modern C++
+-Exec=Hypr
++Exec=/etc/X11/Sessions/hypr
+ TryExec=Hypr
+ Type=Application
+ X-LightDM-DesktopName=Hypr
+ DesktopNames=Hypr
+-Keywords=tiling;wm;window;manager;Hypr;
+\ No newline at end of file
++Keywords=tiling;wm;window;manager;Hypr;

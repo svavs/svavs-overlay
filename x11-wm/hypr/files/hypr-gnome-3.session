@@ -1,0 +1,3 @@
+[GNOME Session]
+Name=Hypr session
+RequiredComponents=gnome-settings-daemon;hypr-gnome;
