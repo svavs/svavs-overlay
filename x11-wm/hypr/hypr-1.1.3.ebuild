@@ -4,29 +4,21 @@
 
 EAPI=7
 
-inherit cmake 
+inherit cmake desktop pax-utils
 
 DESCRIPTION="A dynamic Linux tiling window manager for Xorg"
 HOMEPAGE="https://github.com/hyprwm/Hypr"
 SRC_URI="https://github.com/hyprwm/Hypr/archive/refs/tags/${PV}.tar.gz"
+
 S="${WORKDIR}/Hypr-${PV}"
+
 LICENSE="BSD-with-attribution"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="dbus gnome"
 
-# A space delimited list of portage features to restrict. man 5 ebuild
-# for details.  Usually not needed.
 RESTRICT="test"
 
-# Run-time dependencies. Must be defined to whatever this depends on to run.
-# Example:
-#    ssl? ( >=dev-libs/openssl-1.0.2q:0= )
-#    >=dev-lang/perl-5.24.3-r1
-# It is advisable to use the >= syntax show above, to reflect what you
-# had installed on your system when you tested the package.  Then
-# other users hopefully won't be caught without the right version of
-# a dependency.
 RDEPEND="
   >=x11-libs/cairo-1.16.0-r6
   >=x11-libs/libxcb-1.15-r1
@@ -38,13 +30,8 @@ RDEPEND="
 	dbus? ( sys-apps/dbus )
 "
 
-# Build-time dependencies that need to be binary compatible with the system
-# being built (CHOST). These include libraries that we link against.
-# The below is valid if the same run-time depends are required to compile.
 DEPEND="${RDEPEND}"
 
-# Build-time dependencies that are executed during the emerge process, and
-# only need to be present in the native build system (CBUILD). Example:
 BDEPEND="${DEPEND}
   >=sys-devel/gdb-11.2
   >=dev-util/ninja-1.11.1-r2
@@ -69,6 +56,10 @@ src_prepare() {
   cmake_src_prepare
 }
 src_configure() {
+	local mycmakeargs=(
+		-DSYSCONFDIR="${EPREFIX}"/etc
+		-DWITH_DBUS=$(usex dbus)
+	)
   cmake_src_configure
 }
 
@@ -77,14 +68,14 @@ src_compile() {
 }
 
 src_install() {
-  dobin ${WORKDIR}/${PF}_build/Hypr
+  # dobin ${WORKDIR}/${PF}_build/Hypr
 
 	pax-mark m "${ED}"/usr/bin/Hypr
 
 	exeinto /etc/X11/Sessions
 	newexe "${FILESDIR}"/${PN}-session ${PN}
 
-	# GNOME-based awesome
+	# GNOME-based 
 	if use gnome; then
 		# GNOME session
 		insinto /usr/share/gnome-session/sessions
