@@ -28,6 +28,8 @@ RDEPEND="
   >=x11-libs/xcb-util-keysyms-0.4.0-r2
   >=x11-libs/xcb-util-wm-0.4.1-r3
 	dbus? ( sys-apps/dbus )
+
+  >=x11-apps/xmodmap-1.0.11
 "
 
 DEPEND="${RDEPEND}"
